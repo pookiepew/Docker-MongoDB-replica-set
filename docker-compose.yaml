@@ -1,0 +1,91 @@
+version: '3.8'
+
+services:
+  mf:
+    image: 'repo:5000/mongo:keyfile'
+    volumes:
+      - data:/data/db
+    ports:
+      - '27017:27017'
+    networks:
+      - prod
+    env_file: 
+      - ./mongo.env
+    deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - "node.labels.id==mf"
+    command: ["mongod", "--keyFile", "/opt/mongo.key", "--bind_ip_all", "--replSet", "rs0"]
+      
+
+  w1:
+    image: 'repo:5000/mongo:keyfile'
+    volumes:
+      - data:/data/db
+    ports:
+      - '27018:27017'
+    networks:
+      - prod
+    env_file: 
+      - ./mongo.env
+    deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - "node.labels.id==w1"
+    command: ["mongod", "--keyFile", "/opt/mongo.key", "--bind_ip_all", "--replSet", "rs0"]
+
+  w2:
+    image: 'repo:5000/mongo:keyfile'
+    volumes:
+      - data:/data/db
+    ports:
+      - '27019:27017'
+    networks:
+      - prod
+    env_file: 
+      - ./mongo.env
+    deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - "node.labels.id==w2"
+    command: ["mongod", "--keyFile", "/opt/mongo.key", "--bind_ip_all", "--replSet", "rs0"]
+
+  w3:
+    image: 'repo:5000/mongo:keyfile'
+    volumes:
+      - data:/data/db
+    ports:
+      - '27020:27017'
+    networks:
+      - prod
+    env_file: 
+      - ./mongo.env
+    deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - "node.labels.id==w3"
+    command: ["mongod", "--keyFile", "/opt/mongo.key", "--bind_ip_all", "--replSet", "rs0"]
+
+
+networks:
+  prod:
+
+
+volumes:
+  data:
