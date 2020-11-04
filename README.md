@@ -1,7 +1,7 @@
 ## Docker swarm MongoDB replica set
 
 This is mainly a repo to deploy a MongoDB replica set for test & development
-But feel free to use it as a simple guide.
+but feel free to use it as a simple guide.
 
 ### What you need
 
