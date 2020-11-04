@@ -14,7 +14,7 @@ I'm also using local IPs but using DNS names is recommended.
 1. Change docker-compose to fit your needs
 2. Change mongo-example.env to mongo.env
 3. Change username and password in mongo.env
-4. Either run commands on a swarm manager use docker-compose
+4. Either run commands on a swarm manager or use docker-compose up
 
 On a swarm manager:
 
