@@ -6,7 +6,7 @@ but feel free to use it as a simple guide.
 ### What you need
 
 For this repo I'm using 4 servers but you don't have to.
-Docker-compose can be changed to deploy everything on one server.
+Docker-compose.yaml can be changed to deploy everything on one server.
 I'm also using local IPs but using DNS names is recommended.
 
 ### How to use
