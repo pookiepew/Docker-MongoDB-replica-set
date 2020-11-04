@@ -1,3 +1,5 @@
+## I'll update regarding the mongo image asap - you need to create an image with a keyfile inside.
+
 ## Docker swarm MongoDB replica set
 
 This is mainly a repo to deploy a MongoDB replica set for test & development
