@@ -94,7 +94,11 @@ rs0:PRIMARY> db.createUser(
 ```
 
 A connection string connecting from MongoDB Compass:
-> mongodb://user-name:user-password@HOST1:27017,HOST2:27018,HOST3:27019,HOST4:27020/?authSource=database-name&replicaSet=rs0
+```shell
+mongodb://user-name:user-password@HOST1:27017,HOST2:27018,HOST3:27019,HOST4:27020/?authSource=database-name&replicaSet=rs0
+```
 
 A connection string connecting with Mongoose / NodeJS
-> mongodb://user-name:user-password@HOST1:27017,HOST2:27018,HOST3:27019,HOST4:27020/database-name?replicaSet=rs0
+```shell
+mongodb://user-name:user-password@HOST1:27017,HOST2:27018,HOST3:27019,HOST4:27020/database-name?replicaSet=rs0
+```
