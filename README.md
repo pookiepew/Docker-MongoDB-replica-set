@@ -1,5 +1,3 @@
-## I'll update regarding the mongo image asap - you need to create an image with a keyfile inside.
-
 ## Docker swarm MongoDB replica set
 
 This is mainly a repo to deploy a MongoDB replica set for test & development
@@ -13,10 +11,19 @@ I'm also using local IPs but using DNS names is recommended.
 
 ### How to use
 
-1. Change docker-compose to fit your needs
-2. Change mongo-example.env to mongo.env
-3. Change username and password in mongo.env
-4. Either run commands on a swarm manager or use docker-compose up
+1. Create a custom mongodb image
+2. Change docker-compose to fit your needs
+3. Change mongo-example.env to mongo.env
+4. Change username and password in mongo.env
+5. Either run commands on a swarm manager or use docker-compose up
+
+In same directory as Dockerfile:
+
+```shell
+$ openssl rand -base64 741 > mongo.key
+$ docker build -t my-custom-mongodb-image .
+```
+
 
 On a swarm manager:
 
